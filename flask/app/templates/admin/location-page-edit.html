@@ -6,14 +6,17 @@
 			<div class="form-header">
 				<span>Location</span>
 			</div>
-			<form class="location-form" role="form" action="" method="post" name="login">
+			<form class="location-form" role="form" action="" method="post" name="login" enctype='multipart/form-data'>
 				{{form.hidden_tag() }}
 				{% for error in form.errors.global %}
 				<p class="help-block">{{ error }}</p>
 				{% endfor %}
 				{{ render_field(form.name, placeholder='Name', type='text') }}
-				{{ render_field(form.description, placeholder='Description',
-				type='text') }}
+				{{ render_field(form.description, placeholder='Description', type='text') }}
+				{{ render_field(form.image, placeholder='Description') }}
+				{{ render_field(form.image_alt, placeholder='Description', type='text') }}
+				{{ render_field(form.lat, placeholder='Description', type='text') }}
+				{{ render_field(form.lon, placeholder='Description', type='text') }}
 				<p><input class="btn btn-primary" type="submit" value="{{ submit_text }}" /></p>
 			</form>
 		</div>
