@@ -1,0 +1,14 @@
+{% extends 'admin/base.html' %}
+
+{% block admin_body %}
+{% for course in courses %}
+	<div class="admin-course-page-summary-element" >
+		<span>{{ course.id }}</span>
+		<span>{{ course.name }}</span>
+		<span>{{ course.description }}</span>
+		<span>{{ course.price }}</span>
+		<a href="/admin/courses/{{ course.name }}">Edit</a>
+	</div>
+{% endfor %}
+<a href="/admin/courses/new">New Course</a>
+{% endblock %}

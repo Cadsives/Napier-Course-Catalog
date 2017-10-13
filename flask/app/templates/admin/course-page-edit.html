@@ -1,0 +1,23 @@
+{% extends 'admin/base.html' %}
+
+{% block admin_body %}
+	<div class="form-container-outer">
+		<div class="form-container">
+			<div class="form-header">
+				<span>Course</span>
+			</div>
+			<form class="course-form" role="form" action="" method="post" name="login">
+				{{form.hidden_tag() }}
+				{% for error in form.errors.global %}
+				<p class="help-block">{{ error }}</p>
+				{% endfor %}
+				{{ render_field(form.name, placeholder='Name', type='text') }}
+				{{ render_field(form.description, placeholder='Description',
+				type='text') }}
+				{{ render_field(form.price, placeholder='Price',
+				type='text') }}
+				<p><input class="btn btn-primary" type="submit" value="{{ submit_text }}" /></p>
+			</form>
+		</div>
+	</div>
+{% endblock %}
